@@ -24,6 +24,20 @@ gem "mongo", "~> 1.5.0.rc0"
 gem "bson", "~> 1.5.0.rc0"
 gem "bson_ext", "~> 1.5.0.rc0"
 
+gem 'therubyracer', '>= 0.9.9'
+
+gem 'haml-rails', :group => :development
+gem 'rspec-rails', :group => [:development, :test]
+gem 'factory_girl_rails', :group => :test
+gem 'mongoid-rspec', :group => :test
+gem "devise", ">= 2.0.4"
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
