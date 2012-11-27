@@ -19,6 +19,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem "mongoid", "~> 2.2"
+gem "mongo", "~> 1.5.0.rc0"
+gem "bson", "~> 1.5.0.rc0"
+gem "bson_ext", "~> 1.5.0.rc0"
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
