@@ -32,6 +32,8 @@ gem 'factory_girl_rails', :group => :test
 gem 'mongoid-rspec', :group => :test
 gem "devise", ">= 2.0.4"
 
+gem "leaflet-rails"
+
 group :test do
   gem 'cucumber-rails'
   gem 'capybara'
