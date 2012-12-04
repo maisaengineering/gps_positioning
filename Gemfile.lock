@@ -199,6 +199,7 @@ DEPENDENCIES
   factory_girl_rails
   haml-rails
   jquery-rails
+  json (~> 1.7.3)
   leaflet-rails
   mongo (~> 1.5.0.rc0)
   mongoid (~> 2.2)
