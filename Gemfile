@@ -24,7 +24,7 @@ gem "mongo", "~> 1.5.0.rc0"
 gem "bson", "~> 1.5.0.rc0"
 gem "bson_ext", "~> 1.5.0.rc0"
 
-gem 'therubyracer', '>= 0.9.9'
+gem 'therubyracer'
 
 gem 'haml-rails', :group => :development
 gem 'rspec-rails', :group => [:development, :test]
