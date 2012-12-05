@@ -14,7 +14,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', '0.11.0'
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -24,7 +24,7 @@ gem "mongo", "~> 1.5.0.rc0"
 gem "bson", "~> 1.5.0.rc0"
 gem "bson_ext", "~> 1.5.0.rc0"
 
-gem 'therubyracer'
+# gem 'therubyracer', '>= 0.9.9'
 
 gem 'haml-rails', :group => :development
 gem 'rspec-rails', :group => [:development, :test]
@@ -45,6 +45,7 @@ gem "json", "~> 1.7.3"
 #gem 'thin'
 #gem 'libv8', '~> 3.11.8'
 gem "heroku"
+gem "pg"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

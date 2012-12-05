@@ -125,6 +125,7 @@ GEM
     netrc (0.7.7)
     nokogiri (1.5.5)
     orm_adapter (0.4.0)
+    pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -221,8 +222,9 @@ DEPENDENCIES
   mongo (~> 1.5.0.rc0)
   mongoid (~> 2.2)
   mongoid-rspec
+  pg
   rails (= 3.2.8)
   rspec-rails
   sass-rails (~> 3.2.3)
-  therubyracer
+  therubyracer (= 0.11.0)
   uglifier (>= 1.0.3)
