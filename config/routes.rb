@@ -5,7 +5,10 @@ GpsPositioning::Application.routes.draw do
 
   get "home/index"
   get "vehicles/index"
-  root :to => 'home#index'
+
+  # resources :vehicles
+
+  root :to => 'vehicles#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

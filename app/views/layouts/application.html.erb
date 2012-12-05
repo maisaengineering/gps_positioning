@@ -11,56 +11,10 @@
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<%= yield %>
 
-<div id="map"></div>
+  <%= yield %>
 
-<script>
-      var map = new L.Map('map');
-      var mapquestUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
-      subDomains = ['otile1','otile2','otile3','otile4'],
-      mapquestAttrib = ''
-      var mapquest = new L.TileLayer(mapquestUrl, {maxZoom: 18, attribution: mapquestAttrib, subdomains: subDomains});
-      var gothenburg = new L.LatLng(57.71098,11.9826); 
-      map.setView(gothenburg, 16).addLayer(mapquest);
 
-      // create fullscreen control
-      var fullScreen = new L.Control.FullScreen();
-      map.addControl(fullScreen);
-      map.on('enterFullscreen', function(){
-        if(window.console) window.console.log('enterFullscreen');
-      });
-      map.on('exitFullscreen', function(){
-        if(window.console) window.console.log('exitFullscreen');
-      });
-
-	  var id = 'Maisa';
-	  var type = 'test';
-	  var last_update = '2012-12-03 04:15:45';
-	  var speed = '23';
-	  var direction = 'O';
-	  var heading = '100';
-	  var lon = "11.9826";
-    var lat = "57.71098";
-
-	  var text1 = id + ' (' + type + ')';
-	  var text2 = speed + ' km/h, ' + direction + ' (' + heading + ')';
-	  
-      L.marker([lat,lon], {icon: new L.NumberedDivIcon({number: text1})})
-		.addTo(map)
-		.bindPopup(text1 +'<br />' + last_update + '<br />' + text2, {closeButton: false});
-
-	  for (var i=0;i<vehicles.length;i++)
-	  {
-	  
-	    var text1 = vehicles[i].id + ' (' + vehicles[i].type + ')';
-	    var text2 = vehicles[i].speed + ' km/h, ' + vehicles[i].direction + ' (' + vehicles[i].heading + ')';
-	    
-        L.marker([vehicles[i].lat,vehicles[i].lon], {icon: new L.NumberedDivIcon({number: text1})})
-		  .addTo(map)
-		  .bindPopup(text1 +'<br />' + last_update + '<br />' + text2, {closeButton: false});
-	  }
-</script>
 
 </body>
 </html>
