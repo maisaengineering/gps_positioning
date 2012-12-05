@@ -103,7 +103,6 @@ GEM
     launchy (2.1.2)
       addressable (~> 2.3)
     leaflet-rails (0.4.5)
-    libv8 (3.11.8.3)
     libwebsocket (0.1.7.1)
       addressable
       websocket
@@ -219,7 +218,6 @@ DEPENDENCIES
   jquery-rails
   json (~> 1.7.3)
   leaflet-rails
-  libv8 (~> 3.11.8)
   mongo (~> 1.5.0.rc0)
   mongoid (~> 2.2)
   mongoid-rspec
