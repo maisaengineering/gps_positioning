@@ -42,7 +42,7 @@ end
 
 gem 'jquery-rails'
 gem "json", "~> 1.7.3"
-
+gem "heroku"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
