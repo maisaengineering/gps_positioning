@@ -43,7 +43,7 @@ end
 gem 'jquery-rails'
 gem "json", "~> 1.7.3"
 #gem 'thin'
-gem 'libv8', '~> 3.11.8'
+#gem 'libv8', '~> 3.11.8'
 gem "heroku"
 gem "pg"
 # To use ActiveModel has_secure_password
