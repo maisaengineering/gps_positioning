@@ -1,14 +1,21 @@
+defaults: &defaults
+  allow_dynamic_fields: true
+
 development:
+  <<: *defaults
   host: localhost
   database: gps_positioning_development
 
 test:
+  <<: *defaults
   host: localhost
   database: gps_positioning_test
 
 # set these environment variables on your prod server
 production:
+  <<: *defaults
   uri: <%= ENV['MONGOHQ_URL'] %>
+
   # host: <%= ENV['MONGOID_HOST'] %>
   # port: <%= ENV['MONGOID_PORT'] %>
   # username: <%= ENV['MONGOID_USERNAME'] %>
