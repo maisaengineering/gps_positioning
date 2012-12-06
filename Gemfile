@@ -45,7 +45,7 @@ gem "json", "~> 1.7.3"
 #gem 'thin'
 gem 'libv8'
 gem "heroku"
-gem "pg"
+#gem "pg"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
