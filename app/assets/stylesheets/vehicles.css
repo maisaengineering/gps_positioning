@@ -1,0 +1,330 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+* html {
+  font-size: 87.5%;
+}
+
+html {
+  font-size: 14px;
+  line-height: 1.28571em;
+}
+
+a {
+  color: #0388a6;
+}
+a:hover {
+  color: #009ce0;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Sidebar css */
+#sidebar {
+  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, #787878), color-stop(95%, #666666));
+  background-image: -webkit-linear-gradient(right, #787878, #666666 95%);
+  background-image: -moz-linear-gradient(right, #787878, #666666 95%);
+  background-image: -o-linear-gradient(right, #787878, #666666 95%);
+  background-image: linear-gradient(right, #787878, #666666 95%);
+  text-shadow: #444444 1px 1px 0;
+  -webkit-transition: right 0.4s ease-in-out;
+  -webkit-transition-delay: 0;
+  -moz-transition: right 0.4s ease-in-out 0;
+  -o-transition: right 0.4s ease-in-out 0;
+  transition: right 0.4s ease-in-out 0;
+  background-color: #787878;
+  color: #fff;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 180px;
+  border-left: 1px solid #555555;
+  padding: 10px;
+}
+
+#sidebar.hidden {
+  right: -201px;
+}
+
+#sidebar #toggle {
+  position: absolute;
+  top: 20px;
+  left: -30px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 30px;
+  height: 13px;
+  background-color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 0 20px 0;
+  text-align: center;
+}
+#sidebar #toggle:hover {
+  background-color: #787878;
+}
+
+#sidebar ul li {
+  margin-left: 1em;
+}
+
+#sidebar ul li.primary {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e4e4e4), color-stop(100%, #d8d8d8));
+  background: -webkit-linear-gradient(#e4e4e4, #d8d8d8);
+  background: -moz-linear-gradient(#e4e4e4, #d8d8d8);
+  background: -o-linear-gradient(#e4e4e4, #d8d8d8);
+  background: linear-gradient(#e4e4e4, #d8d8d8);
+  -webkit-box-shadow: #111111 0 0 4px;
+  -moz-box-shadow: #111111 0 0 4px;
+  box-shadow: #111111 0 0 4px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: #f1f1f1 1px 1px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #454545;
+  margin: 0.5em 0;
+  padding: 0.3em;
+  background-color: #e0e0e0;
+  border: 1px solid #d6d6d6;
+  border-top-color: #f7f7f7;
+  border-bottom-color: #939393;
+}
+
+#sidebar ul li.primary label {
+  display: block;
+  margin-left: 2em;
+  cursor: pointer;
+}
+
+#sidebar ul li.primary input {
+  float: left;
+}
+
+#sidebar ul li.primary:hover {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d4d4d4), color-stop(100%, #c8c8c8));
+  background: -webkit-linear-gradient(#d4d4d4, #c8c8c8);
+  background: -moz-linear-gradient(#d4d4d4, #c8c8c8);
+  background: -o-linear-gradient(#d4d4d4, #c8c8c8);
+  background: linear-gradient(#d4d4d4, #c8c8c8);
+  background-color: d0d0d0;
+}
+
+#sidebar ul li.primary.active {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #53a1b5), color-stop(100%, #4192a7));
+  background: -webkit-linear-gradient(#53a1b5, #4192a7);
+  background: -moz-linear-gradient(#53a1b5, #4192a7);
+  background: -o-linear-gradient(#53a1b5, #4192a7);
+  background: linear-gradient(#53a1b5, #4192a7);
+  text-shadow: #1e454c 1px 1px 0;
+  background-color: #499AAF;
+  color: #fff;
+  border: 1px solid #4996A8;
+  border-top-color: #78B6C5;
+  border-bottom-color: #2E6371;
+}
+
+#sidebar hr {
+  margin: 1em 0;
+  border: 0;
+  border-bottom: 1px solid #555;
+}
+
+#sidebar h3 {
+  margin-bottom: 0.3em;
+}
+
+#sidebar #search {
+  width: 90px;
+  display: inline-block;
+}
+
+#sidebar input[type=submit] {
+  margin-top: -2px;
+  display: inline-block;
+}
+
+
+/* Sidebar input css */
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select,
+.uneditable-input {
+  display: inline-block;
+  width: 170px;
+  height: 18px;
+  padding: 4px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #444;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+input[type=checkbox], input[type=radio] {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 3px 0;
+  *margin-top: 0;
+  /* IE6-7 */
+  line-height: normal;
+  border: none;
+}
+
+input[type=button], input[type=reset], input[type=submit] {
+  width: auto;
+  height: auto;
+}
+
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input, textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+input[type=file]:focus, input[type=checkbox]:focus, select:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: 1px dotted #666;
+}
+
+input[type=button],
+input[type=submit],
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  background-color: #e6e6e6;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), color-stop(25%, white), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(white, white 25%, #e6e6e6);
+  background-image: -moz-linear-gradient(top, white, white 25%, #e6e6e6);
+  background-image: -ms-linear-gradient(white, white 25%, #e6e6e6);
+  background-image: -o-linear-gradient(white, white 25%, #e6e6e6);
+  background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+  padding: 5px 14px 6px;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  color: #333;
+  font-size: 13px;
+  line-height: normal;
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  -ms-transition: 0.1s linear all;
+  -o-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover,
+.btn:hover {
+  background-position: 0 -15px;
+  color: #333;
+  text-decoration: none;
+}
+
+input[type=submit]:focus,
+.btn:focus {
+  outline: 1px dotted #666;
+}
+

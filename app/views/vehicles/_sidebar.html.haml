@@ -1,0 +1,23 @@
+#sidebar
+  #toggle &raquo;
+  %input#centerBtn{:type => 'button', :value => 'Centrera fordon'}
+  %hr
+  %form#filters
+    %ul
+      - @groups.uniq.each do |group|
+        %li.primary.active
+          %input{:id => group, :type => 'checkbox', :checked => true}
+          %label{:for => group}
+            = group
+        %li
+          %ul
+            - @types.uniq.each do |type|
+              %li.active
+                %input{:type => 'checkbox', :name => 'type', :checked => true, :value => type, :rel => group}
+                %label
+                  = type
+    %hr
+
+    %h3 Sök på fordon
+    %input#search{:type => 'text', :name => 'id'}
+    %input{:type => 'submit', :value => 'Sök'}

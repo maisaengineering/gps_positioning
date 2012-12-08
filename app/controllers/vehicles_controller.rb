@@ -14,6 +14,15 @@ class VehiclesController < ApplicationController
 			Vehicle.create(each_data)	
 			# raise each_data.inspect	
 		end
+
 		@vehicles = Vehicle.all	
+		@types = []
+		@groups = []
+		@vehicles.each do |data|
+			@types.push(data.type)
+		end
+		@vehicles.each do |data|
+			@groups.push(data.group)
+		end
 	end
 end
