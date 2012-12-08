@@ -68,3 +68,7 @@ height: 10px;
 	text-align: center;
 	color: white;
 }
+
+.leaflet-container .leaflet-control-attribution{
+	display:none;
+}
