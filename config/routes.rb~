@@ -5,7 +5,6 @@ GpsPositioning::Application.routes.draw do
 
   get "home/index"
   get "vehicles/index"
-  get "vehicles/checked_types"
 
   # resources :vehicles
 

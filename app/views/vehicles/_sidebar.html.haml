@@ -3,21 +3,84 @@
   %input#centerBtn{:type => 'button', :value => 'Centrera fordon'}
   %hr
   %form#filters
-    %ul
+    %ul.group
       - @groups.uniq.each do |group|
         %li.primary.active
-          %input{:id => group, :type => 'checkbox', :checked => true}
+          %input{:id => group, :type => 'checkbox', :checked => true, :class => "group"}
           %label{:for => group}
             = group
         %li
           %ul
-            - @types.uniq.each do |type|
+            - i=0     
+            - @typess= Vehicle.where(:group => group).collect{|a| [a.type]}
+            %input{:type => 'hidden',:id=>group+"length",:value=>@typess.uniq.length}
+            - @typess.uniq.each do |type|   
               %li.active
-                %input{:type => 'checkbox', :name => 'type', :checked => true, :value => type, :rel => group}
+                %input{:type => 'checkbox', :name => 'type', :class => "child", :checked => true, :value => type[0], :rel => group,:id=>group+i.to_s}
                 %label
-                  = type
+                  = type[0]
+                  - i=i+1         
     %hr
 
     %h3 Sök på fordon
     %input#search{:type => 'text', :name => 'id'}
     %input{:type => 'submit', :value => 'Sök'}
+%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
+:javascript
+  $(function(){
+  var selectedcheck = new Array();
+      $('.group').click(function(){
+     
+
+       var $row = $(this).parents('ul');
+       var group_id=$(this).attr('id');  
+       
+           
+       var total_types=$("#"+group_id+"length").val(); 
+       
+       if($(this).hasClass("selected")){
+        for(i=0;i<total_types;i++)
+        document.getElementById(group_id+i).checked=true;
+        $(this).removeClass("selected");
+        $("input:checkbox[name=type]:checked").each(function() {
+        selectedcheck.push($(this).val());
+        });
+       
+            
+        }
+       else 
+       {
+         for(i=0;i<total_types;i++)
+         document.getElementById(group_id+i).checked=false;
+         $(this).addClass("selected");
+         $("input:checkbox[name=type]:checked").each(function() {
+             selectedcheck.push($(this).val());
+             });
+             
+       }
+
+    $.ajax({
+    url: "/vehicles/checked_types",
+    data: { x: selectedcheck },
+    cache: false,
+    beforeSend: function( ) {
+    $('.map').append("loading...");
+    },
+    success: function(html){     
+    $('.map').empty();
+
+    $('.map').append(html);
+    },
+    error: function( ) {
+    $('.map').append("...error loading...");
+    }
+    })
+
+
+
+
+
+
+      });
+
+  });

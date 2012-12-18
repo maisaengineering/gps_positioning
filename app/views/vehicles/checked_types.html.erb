@@ -1,0 +1,54 @@
+ 
+<html>
+<head>
+  <title>GpsPositioning</title>
+
+</head>
+<body>
+<div id="map"></div>
+
+
+<%= render 'sidebar' %>
+<script>
+  //open street map
+  var map = new L.Map('map');
+  var mapquestUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+  subDomains = ['otile1','otile2','otile3','otile4'],
+  mapquestAttrib = ''
+  var mapquest = new L.TileLayer(mapquestUrl, {maxZoom: 18, attribution: mapquestAttrib, subdomains: subDomains});
+  var gothenburg = new L.LatLng(57.71098,11.9826);
+  map.setView(gothenburg, 16).addLayer(mapquest);
+
+  // create fullscreen control
+  var fullScreen = new L.Control.FullScreen();
+  map.addControl(fullScreen);
+  map.on('enterFullscreen', function(){
+    if(window.console) window.console.log('enterFullscreen');
+  });
+  map.on('exitFullscreen', function(){
+    if(window.console) window.console.log('exitFullscreen');
+  });
+
+  // vehicle details
+  <% @checked_types.each do |vehicle| %>
+    var id = '<%= vehicle.train_name %>';
+    var type = '<%= vehicle.type %>';
+    var last_update = '<%= vehicle.last_update %>';
+    var speed = '<%= vehicle.speed %>';
+    var direction = '<%= vehicle.direction %>';
+    var heading = '<%= vehicle.heading %>';
+    var lon = "<%= vehicle.lon %>";
+    var lat = "<%= vehicle.lat %>";
+
+    var text1 = id + ' (' + type + ')';
+    var text2 = speed + ' km/h, ' + direction + ' (' + heading + ')';
+
+    // vehicle position
+    L.marker([lat,lon], {icon: new L.NumberedDivIcon({number: text1})})
+      .addTo(map)
+      .bindPopup(text1 +'<br />' + last_update + '<br />' + text2, {closeButton: false});
+  <% end %>
+
+</script>
+  </body>
+</html>

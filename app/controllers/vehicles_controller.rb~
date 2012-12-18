@@ -3,38 +3,26 @@ class VehiclesController < ApplicationController
 	require 'open-uri'
 	require 'json'
 	
-	def index	
-		
+	def index		
 		result = JSON.parse(open("http://api.reges.se/gps/v1/vehicle").read)
 
 		result['vehicle'].each do |each_data|
-			
+			# raise result.inspect
 			remove_id = each_data.delete('id')
 			each_data['train_name'] = remove_id
-			
+			#raise each_data.inspect
 			Vehicle.create(each_data)	
-			
-		    end
+			# raise each_data.inspect	
+		end
 
 		@vehicles = Vehicle.all	
-		
+		@types = []
 		@groups = []
-		
+		@vehicles.each do |data|
+			@types.push(data.type)
+		end
 		@vehicles.each do |data|
 			@groups.push(data.group)
 		end
 	end
-  
-  def checked_types
-      @checked_types = Vehicle.where(:type => 'X11')
-	  @vehicles = Vehicle.all	
-	  @groups = []
-	  @vehicles.each do |data|
-		@groups.push(data.group)
-	  end
-  	
-    end
-
-
 end
-
